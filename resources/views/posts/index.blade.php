@@ -24,7 +24,7 @@
                     <br><br>
 
 
-                    <div class="card text-center text-light" style="background-color: #8d0b00">
+                    <div class="card text-center text-light" style="background-color: #8d1e16">
                         <h4 class="card-title mt-1">{{$post->titel}}</h4><br>
                         <div class="card-img" style="">
                             <img class="img-fluid" src="{{asset('storage/' . env('PATH_ON_SERVER_FAY') . str_replace('public','',$post->image))}}"

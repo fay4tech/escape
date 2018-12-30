@@ -13,7 +13,7 @@ class NotationController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(){
-        $text = Extra::find(2);
+        $text = Extra::find(4);
         return view('notation.index', compact('text'));
     }
 

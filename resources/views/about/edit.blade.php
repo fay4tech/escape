@@ -10,17 +10,17 @@
         <div class="col-12">
             <div class="col-3"></div>
             <div class="col-9">
-                {!! Form::open(['route' => ['about.update', $text['id']], 'method' => 'PUT', 'id' => 'edit' ]) !!}
+                {!! Form::open(['route' => ['about.update', $about->id], 'method' => 'PUT', 'id' => 'edit' ]) !!}
                 
                     @csrf
                     
                     <div class="form-group">
                         <label for="titel">Titre</label> 
-                        <input id="titel" name="titel" value="{{ $text->titel }}" type="text" class="form-control here">
+                        <input id="titel" name="titel" value="{{ $about->titel }}" type="text" class="form-control here">
                     </div>
                     <div class="form-group">
                         <label for="comment">Comment</label> 
-                        <textarea id="text" name="text" rows="40" aria-describedby="commentHelpBlock" class="form-control">{{ $text->text }}</textarea>
+                        <textarea id="text" name="text" rows="40" aria-describedby="commentHelpBlock" class="form-control">{{ $about->text }}</textarea>
                     </div> 
                     <div class="form-group">
                         <button name="submit" type="submit" class="btn btn-primary">Editer</button>

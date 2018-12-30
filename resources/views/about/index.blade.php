@@ -6,26 +6,28 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div class="">
-                    <img src='{!! url($text->image) !!}' class="rounded float-right img-thumbnail mx-4" alt="sherlokoms" style="width: 20%">
+                    <img src='{!! url($about->image) !!}' class="rounded float-right img-thumbnail mx-4" alt="sherlokoms" style="width: 20%">
                     <h1 class="display-4">ABOUT US!</h1>
-                    <p class="lead">{!! $text->titel !!}</p>                    
+                    <p class="lead">{!! $about->titel !!}</p>
                     @if (Auth::check() && auth()->user()->lvl > 8)
-                        <a href="{{url("about/$text->id/edit")}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                        <a href="{{url("about/$about->id/edit")}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
                     @endif
                     <hr class="my-4">
                     {{-- 
                         <p><h1>Under Construction</h1></p> 
                         <img src='{!! url('images/default/construction.gif') !!}' class="rounded img-thumbnail" alt="construction" style="width: 25%"> 
                         --}}
-                       @if($text->text == null)
+                       @if($about->text == null)
                         <div class="col-12 lead text-center">
-                            <img src='{!! url('images/default/construction.gif') !!}' class="rounded img-thumbnail" alt="construction" style="width: 25%"> 
+                            <img src='{!! url('images/default/construction.gif') !!}' class="rounded img-thumbnail" alt="construction" style="width: 25%">
+                        </div>
                        @else
-                        <div class="col-12 lead text-justify">
-                            {!! $text->text !!}
-                       @endif
-                    </div>                    
+                            <div class="col-12 lead text-justify">
+                                {!! $about->text !!}
+                            </div>
+                        @endif
                 </div>
+            </div>
 
             </div>
             <div class="col-md-2"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

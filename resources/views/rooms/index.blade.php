@@ -40,7 +40,7 @@
                     <div class="col-md-8">
                         <div class="row">
                             @foreach($rooms as $key => $room)
-                            <a href="{{route('rooms.show', $room->id)}}" style="text-decoration: none; cursor: url(images/default/key32.png), auto; color: white;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$room->$resum}}">
+                            <a href="{{route('rooms.show', $room->id)}}" style="text-decoration: none; cursor: {{url('images/default/key32.png')}}, auto; color: white;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$room->$resum}}">
                                 <div class="card-body col-xl-4 col-lg-5 my-2 pb-2 text-center col-md-6 col-sm-12" style="max-height:350px;">
                                     <img class="card-img-top img-responsive" alt="{{$room->name}}" src="{{asset('storage/' . env('PATH_ON_SERVER_FAY') . str_replace('public','',$room->image))}}" style="width: auto; max-height: 130px;" />
                                     <div class="card-block">
@@ -80,9 +80,12 @@
                                                         <span class="badge badge-danger badge-pill d-flex justify-content-center">Caché</span>
                                                     @else
                                                         <span class="badge badge-info badge-pill d-flex justify-content-center">Visible</span>
-                                                    @endif                                                    
+                                                    @endif
                                                 @endif
-                                            <a href="{{route('rooms.show', $room->id)}}" class="btn btn-primary btn embed-responsive align-bottom pb-0" style="cursor: url(images/default/key32.png), auto;">@lang('En savoir plus')</a>
+                                                @if($room->company()->first()->country != null)
+                                                    <span class="float-right"><img src="{{asset('storage/' . env('PATH_ON_SERVER_FAY') . str_replace('public','','flags/24/'.$room->company()->first()->country.'.png'))}}"></span>
+                                                @endif
+                                            <a href="{{route('rooms.show', $room->id)}}" class="btn btn-primary btn embed-responsive align-bottom pb-0" style="cursor: {{asset('storage/' . env('PATH_ON_SERVER_FAY') . str_replace('public','','images/default/key32.png'))}}, auto;">@lang('En savoir plus')</a>
                                         </div>
                                     </div>
                                 </div>

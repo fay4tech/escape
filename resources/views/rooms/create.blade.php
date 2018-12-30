@@ -5,6 +5,14 @@
     @include('layouts.partials._tiny_fr')
 @endsection
 @section('content')
+    @php
+        $pitch = 'pitch_'.config('app.locale');
+        $theme = 'theme_'.config('app.locale');
+        $resum = 'resum_'.config('app.locale');
+        $avis = 'avis_'.config('app.locale');
+        $positive = 'positive_'.config('app.locale');
+        $negative = 'negative_'.config('app.locale');
+    @endphp
 
     <div class="container text-light">
 
@@ -18,7 +26,7 @@
 
                 {!! form_row($form->name) !!}
 
-                {!! form_row($form->theme) !!}
+                {!! form_row($form->$theme) !!}
 
                 <div class="row">
 
@@ -62,7 +70,7 @@
 
                 {!! form_row($form->activ) !!}
 
-                {!! form_row($form->resum) !!}
+                {!! form_row($form->$resum) !!}
 
                 {!! form_row($form->image) !!}
 
@@ -71,7 +79,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                {!! form_row($form->pitch_fr) !!}
+                {!! form_row($form->$pitch) !!}
             </div>
         </div>
 
@@ -85,7 +93,7 @@
 
             <div class="col-12">
 
-                {!! form_row($form->avis) !!}
+                {!! form_row($form->$avis) !!}
 
             </div>
 
@@ -95,13 +103,13 @@
 
             <div class="col-md-6 col-sm-12">
 
-                {!! form_row($form->positive) !!}
+                {!! form_row($form->$positive) !!}
 
             </div>
 
             <div class="col-md-6 col-sm-12">
 
-                {!! form_row($form->negative) !!}
+                {!! form_row($form->$negative) !!}
 
             </div>
 

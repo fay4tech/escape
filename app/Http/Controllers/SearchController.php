@@ -161,16 +161,16 @@ class SearchController extends Controller
                 $results = Room::where('activ','1')
                                                     ->whereIn('id', $this->companyRoom($land, $city) )
                                                     ->where('name', 'like', '%'.$search.'%')
-                                                    ->orWhere('theme', 'like', '%'.$search.'%')
-                                                    ->orWhere('pitch', 'like', '%'.$search.'%')
-                                                    ->orWhere('avis', 'like', '%'.$search.'%')
+                                                    ->orWhere('theme_fr', 'like', '%'.$search.'%')
+                                                    ->orWhere('pitch_fr', 'like', '%'.$search.'%')
+                                                    ->orWhere('avis_fr', 'like', '%'.$search.'%')
                                                     ->orderBy('name')->get();
                 $this->counter = count($results);
                 $results = Room::whereIn('id', $this->companyRoom($land, $city) )
                     ->where('name', 'like', '%'.$search.'%')
-                    ->orWhere('theme', 'like', '%'.$search.'%')
-                    ->orWhere('pitch', 'like', '%'.$search.'%')
-                    ->orWhere('avis', 'like', '%'.$search.'%')
+                    ->orWhere('theme_fr', 'like', '%'.$search.'%')
+                    ->orWhere('pitch_fr', 'like', '%'.$search.'%')
+                    ->orWhere('avis_fr', 'like', '%'.$search.'%')
                     ->orderBy('name')->get();
                 $this->table = 'rooms';
                 break;

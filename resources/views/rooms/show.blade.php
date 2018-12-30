@@ -84,6 +84,11 @@
             <div class="row">
                 <div class="col-md-3 d-flex">
                     <dl>
+                    @if($room->company()->first()->country != null)
+                        <dt>
+                            <span class="badge badge-pill d-flex float-right"><img src="{{asset('storage/' . env('PATH_ON_SERVER_FAY') . str_replace('public','','flags/48/'. $room->company()->first()->country .'.png'))}}"></span>
+                        </dt>
+                    @endif
                         <dt>
                             @lang('Nom')
                         </dt>

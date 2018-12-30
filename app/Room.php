@@ -22,7 +22,8 @@ class Room extends Model
         'timeplay',
         'image',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'flag'
     ];
     /**
      * @var null

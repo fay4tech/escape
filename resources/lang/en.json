@@ -111,5 +111,9 @@
     "On a": "We",
     "ID de la sale pour Escape.paris": "ID of the sale for Escape.paris",
     "Oui": "Yes",
-    "Non": "No"
+    "Non": "No",
+    "Pays": "Country",
+    "France": "France",
+    "Autriche": "Austria",
+    "Hongrie": "Hungary"
 }

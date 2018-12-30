@@ -144,8 +144,8 @@
                                     @lang('Enseigne'):
                                 </dt>
                                 <dd>
-                                    @if(strtolower($company->name) != "n/a")
-                                        <a href="{{url('companies/'.$company->id)}}">{{ucfirst($company->name)}}</a>
+                                    @if(strtolower($room->company()->first()->name) != "n/a")
+                                        <a href="{{url('companies/'.$room->company_id)}}">{{ucfirst($room->company()->first()->name)}}</a>
                                     @else
                                         <p>{{ucfirst($company->name)}}</p>
                                     @endif

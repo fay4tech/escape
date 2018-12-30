@@ -139,7 +139,6 @@ class RoomController extends Controller
                                     $room->divertissement,
                                     $room->note_mj
         );
-        $company = Company::where('id', $room->company_id)->first();
         $room->views++; //add +1 for viewed room
         $room->save();
         $division = $this->division();
